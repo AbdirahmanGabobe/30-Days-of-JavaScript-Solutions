@@ -234,3 +234,30 @@ for (let i = fruits.length - 1; i >= 0; i--) {
     console.log(fruits[i]);
 }
 
+Exercises: Level 2 
+Question two. 
+Write a script which generates a random hexadecimal number.
+'#ee33df'
+
+solution 
+
+function hexNumber(){
+  let n = (Math.random() * 0xffffff * 1000000).toString(16);
+  return '#' + n.slice(0,6)
+}
+console.log(hexNumber());
+
+Question three. 
+Write a script which generates a random rgb color number.
+rgb(240,180,80)
+
+solution 
+function randomRgb(){
+  let numb = Math.round(0xffffff * Math.random())
+  let r = numb >> 16
+  let g = numb >> 8 & 255
+  let b = numb & 255
+  return `rgb(${r}, ${g}, ${b})`
+}
+console.log(randomRgb());
+
